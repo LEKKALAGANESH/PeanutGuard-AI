@@ -1,0 +1,1204 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-18",
+  "diseases": [
+    {
+      "id": 0,
+      "label": "healthy",
+      "name": { "en": "Healthy", "hi": "स्वस्थ" },
+      "scientific_name": "",
+      "category": "abiotic",
+      "severity_descriptions": {},
+      "treatments": {
+        "organic": [],
+        "chemical": [],
+        "cultural": []
+      },
+      "yield_impact": { "min_pct": 0, "max_pct": 0 },
+      "confusion_pairs": [],
+      "climate_triggers": {
+        "temp_min": 0,
+        "temp_max": 0,
+        "humidity_min": 0,
+        "rainfall_weekly_mm": 0,
+        "growth_stage_days": [0, 0]
+      }
+    },
+    {
+      "id": 1,
+      "label": "early_leaf_spot",
+      "name": { "en": "Early Leaf Spot", "hi": "प्रारंभिक पत्ती धब्बा" },
+      "scientific_name": "Cercospora arachidicola",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "Few scattered brown spots on lower leaves, less than 5% leaf area affected" },
+        "2": { "en": "Brown circular lesions with yellow halos on 5-15% of lower and middle canopy leaves" },
+        "3": { "en": "Lesions spreading to upper canopy, 15-30% defoliation beginning, spots coalescing" },
+        "4": { "en": "Severe defoliation 30-60%, lesions on petioles and stems, significant canopy thinning" },
+        "5": { "en": "Over 60% defoliation, premature plant senescence, near-total canopy loss" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Neem oil spray", "hi": "नीम तेल स्प्रे" },
+            "active_ingredient": "Azadirachtin",
+            "dosage": "5 mL/L water",
+            "frequency": "Every 10-14 days",
+            "brands_by_region": {
+              "IN": ["Neem Guard", "Azamax India"],
+              "NG": ["Neem Pro NG"],
+              "US": ["Trilogy", "AzaMax"]
+            }
+          },
+          {
+            "name": { "en": "Trichoderma viride biocontrol", "hi": "ट्राइकोडर्मा जैव नियंत्रण" },
+            "active_ingredient": "Trichoderma viride",
+            "dosage": "4 g/L water foliar or 2.5 kg/ha soil drench",
+            "frequency": "Every 15-20 days",
+            "brands_by_region": {
+              "IN": ["Tricho-Guard", "Niprot"],
+              "NG": ["BioShield"],
+              "US": ["RootShield Plus"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Chlorothalonil", "hi": "क्लोरोथालोनिल" },
+            "active_ingredient": "Chlorothalonil",
+            "dosage": "2 g/L water",
+            "frequency": "Every 14 days, max 6 applications/season",
+            "brands_by_region": {
+              "IN": ["Kavach", "Daconil"],
+              "NG": ["Bravo 500"],
+              "US": ["Bravo WeatherStik", "Echo 720"]
+            },
+            "banned_in": ["EU"]
+          },
+          {
+            "name": { "en": "Tebuconazole", "hi": "टेबुकोनाज़ोल" },
+            "active_ingredient": "Tebuconazole",
+            "dosage": "1 mL/L water",
+            "frequency": "Every 14-21 days",
+            "brands_by_region": {
+              "IN": ["Folicur", "Orius"],
+              "NG": ["Folicur 250 EW"],
+              "US": ["Folicur 3.6F", "Monsoon"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Rotate crops with non-legumes (cereals) for at least 2 seasons" },
+          { "en": "Remove and destroy infected plant debris after harvest to reduce inoculum" }
+        ]
+      },
+      "yield_impact": { "min_pct": 10, "max_pct": 50 },
+      "confusion_pairs": ["late_leaf_spot", "web_blotch"],
+      "climate_triggers": {
+        "temp_min": 20,
+        "temp_max": 30,
+        "humidity_min": 80,
+        "rainfall_weekly_mm": 25,
+        "growth_stage_days": [30, 90]
+      }
+    },
+    {
+      "id": 2,
+      "label": "late_leaf_spot",
+      "name": { "en": "Late Leaf Spot", "hi": "विलंबित पत्ती धब्बा" },
+      "scientific_name": "Cercosporidium personatum",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "Small dark brown to black spots on lower leaf surfaces, less than 5% area affected" },
+        "2": { "en": "Spots enlarge with dark sporulation on abaxial surface, 5-15% leaf area affected" },
+        "3": { "en": "Lesions on both leaf surfaces, 15-30% defoliation, spots visible on upper canopy" },
+        "4": { "en": "Severe defoliation 30-60%, lesions on petioles, extensive sporulation" },
+        "5": { "en": "Over 60% defoliation, near-total canopy collapse, peg and pod quality severely impacted" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Copper hydroxide spray", "hi": "कॉपर हाइड्रॉक्साइड स्प्रे" },
+            "active_ingredient": "Copper hydroxide",
+            "dosage": "2-3 g/L water",
+            "frequency": "Every 10-14 days",
+            "brands_by_region": {
+              "IN": ["Kocide 3000", "Blue Copper"],
+              "NG": ["Funguran-OH"],
+              "US": ["Kocide 3000", "Champ DP"]
+            }
+          },
+          {
+            "name": { "en": "Bacillus subtilis biocontrol", "hi": "बैसिलस सबटिलिस जैव नियंत्रण" },
+            "active_ingredient": "Bacillus subtilis QST 713",
+            "dosage": "3-4 L/ha",
+            "frequency": "Every 7-14 days",
+            "brands_by_region": {
+              "IN": ["Serenade ASO"],
+              "NG": ["Serenade"],
+              "US": ["Serenade ASO", "Cease"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Pyraclostrobin + Epoxiconazole", "hi": "पायराक्लोस्ट्रोबिन + एपोक्सीकोनाज़ोल" },
+            "active_ingredient": "Pyraclostrobin 133 g/L + Epoxiconazole 50 g/L",
+            "dosage": "1 mL/L water",
+            "frequency": "Every 21-28 days, max 3 applications/season",
+            "brands_by_region": {
+              "IN": ["Opera"],
+              "NG": ["Opera"],
+              "US": ["Headline SC"]
+            }
+          },
+          {
+            "name": { "en": "Mancozeb", "hi": "मैनकोज़ेब" },
+            "active_ingredient": "Mancozeb 75% WP",
+            "dosage": "2.5 g/L water",
+            "frequency": "Every 10-14 days",
+            "brands_by_region": {
+              "IN": ["Dithane M-45", "Indofil M-45"],
+              "NG": ["Dithane M-45"],
+              "US": ["Penncozeb 75DF", "Manzate Pro-Stick"]
+            },
+            "banned_in": ["EU"]
+          }
+        ],
+        "cultural": [
+          { "en": "Use resistant/tolerant varieties such as GPBD-4 or ICGV 86699 where available" },
+          { "en": "Ensure proper plant spacing to improve airflow and reduce leaf wetness duration" }
+        ]
+      },
+      "yield_impact": { "min_pct": 15, "max_pct": 70 },
+      "confusion_pairs": ["early_leaf_spot", "web_blotch", "rust"],
+      "climate_triggers": {
+        "temp_min": 22,
+        "temp_max": 32,
+        "humidity_min": 85,
+        "rainfall_weekly_mm": 30,
+        "growth_stage_days": [45, 120]
+      }
+    },
+    {
+      "id": 3,
+      "label": "rust",
+      "name": { "en": "Rust", "hi": "गेरुआ रोग" },
+      "scientific_name": "Puccinia arachidis",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "Few orange-brown pustules on lower leaf surfaces, less than 5% leaf area affected" },
+        "2": { "en": "Pustules increasing, orange-brown uredinia on 5-15% of leaves, mostly lower canopy" },
+        "3": { "en": "Pustules spreading to upper canopy, 15-30% leaf area covered, early defoliation starting" },
+        "4": { "en": "Heavy pustule coverage 30-60%, significant defoliation, leaves turning necrotic" },
+        "5": { "en": "Over 60% leaf area affected, massive defoliation, plants appear scorched" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Sulfur dust application", "hi": "गंधक धूल छिड़काव" },
+            "active_ingredient": "Elemental sulfur",
+            "dosage": "25-30 kg/ha dusting or 3 g/L wettable sulfur",
+            "frequency": "Every 10-14 days",
+            "brands_by_region": {
+              "IN": ["Sulfex", "Cosavet DF"],
+              "NG": ["Thiovit Jet"],
+              "US": ["Microthiol Disperss", "Kumulus DF"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Propiconazole", "hi": "प्रोपीकोनाज़ोल" },
+            "active_ingredient": "Propiconazole 25% EC",
+            "dosage": "1 mL/L water",
+            "frequency": "Every 14-21 days, max 4 applications/season",
+            "brands_by_region": {
+              "IN": ["Tilt 25 EC", "Bumper"],
+              "NG": ["Tilt 250 EC"],
+              "US": ["Tilt", "PropiMax EC"]
+            }
+          },
+          {
+            "name": { "en": "Hexaconazole", "hi": "हेक्साकोनाज़ोल" },
+            "active_ingredient": "Hexaconazole 5% EC",
+            "dosage": "2 mL/L water",
+            "frequency": "Every 14-21 days",
+            "brands_by_region": {
+              "IN": ["Contaf 5 EC", "Hexadhan"],
+              "NG": ["Anvil 5 SC"],
+              "US": []
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Plant early-maturing and rust-resistant varieties like ICGV 86590" },
+          { "en": "Avoid late sowing which exposes crop to peak rust season" }
+        ]
+      },
+      "yield_impact": { "min_pct": 20, "max_pct": 60 },
+      "confusion_pairs": ["late_leaf_spot", "iron_chlorosis"],
+      "climate_triggers": {
+        "temp_min": 20,
+        "temp_max": 28,
+        "humidity_min": 85,
+        "rainfall_weekly_mm": 40,
+        "growth_stage_days": [50, 110]
+      }
+    },
+    {
+      "id": 4,
+      "label": "white_mold",
+      "name": { "en": "White Mold / Stem Rot", "hi": "सफेद फफूंद / तना सड़न" },
+      "scientific_name": "Sclerotium rolfsii",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "Isolated white mycelial fans at soil line on 1-2 plants per 10m row" },
+        "2": { "en": "White mycelium and small tan sclerotia visible on stems of 5-10% plants" },
+        "3": { "en": "Wilting in patches, 10-25% plants showing stem girdling and sclerotial mats" },
+        "4": { "en": "Major wilting, 25-50% plants collapsed, abundant sclerotia on soil surface" },
+        "5": { "en": "Over 50% stand loss, entire sections dead, soil surface covered with sclerotia" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Trichoderma harzianum soil drench", "hi": "ट्राइकोडर्मा हार्जियेनम मिट्टी ड्रेंच" },
+            "active_ingredient": "Trichoderma harzianum",
+            "dosage": "5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS",
+            "frequency": "Preventive at planting, repeat at 30 and 60 DAS",
+            "brands_by_region": {
+              "IN": ["Tricho-Guard", "Bio-Cure F"],
+              "NG": ["TrichoPower"],
+              "US": ["RootShield Plus WP", "T-22 Planter Box"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Tebuconazole soil drench", "hi": "टेबुकोनाज़ोल मिट्टी ड्रेंच" },
+            "active_ingredient": "Tebuconazole 25.9% EC",
+            "dosage": "1.5 mL/L water as soil drench around stem base",
+            "frequency": "At disease onset, repeat after 21 days if needed",
+            "brands_by_region": {
+              "IN": ["Folicur", "Orius 25 EW"],
+              "NG": ["Folicur 250 EW"],
+              "US": ["Folicur 3.6F", "Orius 3.6F"]
+            }
+          },
+          {
+            "name": { "en": "Flutolanil", "hi": "फ्लूटोलानिल" },
+            "active_ingredient": "Flutolanil 50% WP",
+            "dosage": "1 g/L water",
+            "frequency": "At planting and 45 DAS",
+            "brands_by_region": {
+              "IN": ["Moncut"],
+              "NG": [],
+              "US": ["Moncut 70DF", "ProStar 70WP"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Practice deep plowing to bury sclerotia below 15 cm depth" },
+          { "en": "Avoid excessive irrigation and ensure proper field drainage" }
+        ]
+      },
+      "yield_impact": { "min_pct": 10, "max_pct": 80 },
+      "confusion_pairs": ["collar_rot", "bacterial_wilt"],
+      "climate_triggers": {
+        "temp_min": 25,
+        "temp_max": 35,
+        "humidity_min": 90,
+        "rainfall_weekly_mm": 50,
+        "growth_stage_days": [35, 100]
+      }
+    },
+    {
+      "id": 5,
+      "label": "aspergillus_aflatoxin",
+      "name": { "en": "Aspergillus Crown Rot / Aflatoxin Contamination", "hi": "एस्परगिलस शीर्ष सड़न / एफ्लाटॉक्सिन संदूषण" },
+      "scientific_name": "Aspergillus flavus",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "No visible symptoms on plant, detectable only via lab aflatoxin test at trace levels (<4 ppb)" },
+        "2": { "en": "Slight yellow-green sporulation on isolated pods, aflatoxin 4-20 ppb" },
+        "3": { "en": "Visible greenish-yellow Aspergillus colonies on 10-20% pods, aflatoxin 20-100 ppb" },
+        "4": { "en": "Widespread kernel discoloration and mold, 20-50% pods contaminated, aflatoxin 100-500 ppb" },
+        "5": { "en": "Massive contamination, over 50% pods affected, aflatoxin >500 ppb, crop unmarketable" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Atoxigenic Aspergillus biocontrol", "hi": "एटॉक्सिजेनिक एस्परगिलस जैव नियंत्रण" },
+            "active_ingredient": "Aspergillus flavus AF36 (non-toxigenic strain)",
+            "dosage": "10 kg/ha soil application",
+            "frequency": "Once at 40-60 DAS before pod development",
+            "brands_by_region": {
+              "IN": ["AflaSafe India (pilot)"],
+              "NG": ["AflaSafe", "AflaSafe SN01"],
+              "US": ["AF36 Prevail", "Afla-Guard"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Carbendazim seed treatment", "hi": "कार्बेन्डाज़िम बीज उपचार" },
+            "active_ingredient": "Carbendazim 50% WP",
+            "dosage": "2 g/kg seed as dry seed treatment",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Bavistin", "JK Stein"],
+              "NG": ["Carbendazim 500"],
+              "US": []
+            },
+            "banned_in": ["EU", "US"]
+          }
+        ],
+        "cultural": [
+          { "en": "Harvest at optimal maturity, avoid late harvest which increases aflatoxin risk" },
+          { "en": "Dry pods immediately after harvest to below 8% moisture and store in ventilated conditions" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 100 },
+      "confusion_pairs": ["collar_rot"],
+      "climate_triggers": {
+        "temp_min": 28,
+        "temp_max": 40,
+        "humidity_min": 60,
+        "rainfall_weekly_mm": 0,
+        "growth_stage_days": [80, 140]
+      }
+    },
+    {
+      "id": 6,
+      "label": "web_blotch",
+      "name": { "en": "Web Blotch", "hi": "जाल धब्बा" },
+      "scientific_name": "Didymella arachidicola",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "Faint net-like tan lesions on a few lower leaves, less than 5% leaf area" },
+        "2": { "en": "Web-patterned lesions clearly visible on 5-15% of leaves, mostly lower canopy" },
+        "3": { "en": "Irregular dark brown blotches with web pattern on 15-30% of leaves, upper canopy involved" },
+        "4": { "en": "Coalescing necrotic web blotches on 30-60% of leaf area, moderate defoliation" },
+        "5": { "en": "Over 60% of leaves showing extensive web blotch necrosis, heavy defoliation" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Copper oxychloride spray", "hi": "कॉपर ऑक्सीक्लोराइड स्प्रे" },
+            "active_ingredient": "Copper oxychloride 50% WP",
+            "dosage": "3 g/L water",
+            "frequency": "Every 10-14 days",
+            "brands_by_region": {
+              "IN": ["Blitox-50", "Blue Copper-50"],
+              "NG": ["Cobox"],
+              "US": ["C-O-C-S WDG"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Azoxystrobin", "hi": "एज़ोक्सिस्ट्रोबिन" },
+            "active_ingredient": "Azoxystrobin 23% SC",
+            "dosage": "1 mL/L water",
+            "frequency": "Every 14-21 days, max 4 applications/season",
+            "brands_by_region": {
+              "IN": ["Amistar", "Azaka"],
+              "NG": ["Amistar 250 SC"],
+              "US": ["Abound 2.08SC", "Heritage"]
+            }
+          },
+          {
+            "name": { "en": "Chlorothalonil", "hi": "क्लोरोथालोनिल" },
+            "active_ingredient": "Chlorothalonil 75% WP",
+            "dosage": "2 g/L water",
+            "frequency": "Every 14 days",
+            "brands_by_region": {
+              "IN": ["Kavach"],
+              "NG": ["Bravo 500"],
+              "US": ["Bravo WeatherStik"]
+            },
+            "banned_in": ["EU"]
+          }
+        ],
+        "cultural": [
+          { "en": "Remove crop residues and volunteer peanut plants after harvest" },
+          { "en": "Maintain 2-3 year rotation with non-host crops like sorghum or maize" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 30 },
+      "confusion_pairs": ["early_leaf_spot", "late_leaf_spot"],
+      "climate_triggers": {
+        "temp_min": 18,
+        "temp_max": 28,
+        "humidity_min": 80,
+        "rainfall_weekly_mm": 30,
+        "growth_stage_days": [40, 100]
+      }
+    },
+    {
+      "id": 7,
+      "label": "collar_rot",
+      "name": { "en": "Collar Rot", "hi": "कॉलर सड़न" },
+      "scientific_name": "Aspergillus niger",
+      "category": "fungal",
+      "severity_descriptions": {
+        "1": { "en": "Isolated seedling collapse, 1-2 plants per 10m row showing dark brown lesion at collar region" },
+        "2": { "en": "5-10% seedling mortality, black discoloration at soil line, some pre-emergence losses" },
+        "3": { "en": "10-25% plant mortality, collar region girdled, black Aspergillus sporulation visible" },
+        "4": { "en": "25-50% stand loss in patches, extensive collar girdling and plant collapse" },
+        "5": { "en": "Over 50% stand loss, replanting required, massive pre- and post-emergence mortality" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Trichoderma viride seed treatment", "hi": "ट्राइकोडर्मा बीज उपचार" },
+            "active_ingredient": "Trichoderma viride",
+            "dosage": "4 g/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Tricho-Guard", "Niprot"],
+              "NG": ["BioShield"],
+              "US": ["T-22 Planter Box"]
+            }
+          },
+          {
+            "name": { "en": "Pseudomonas fluorescens seed treatment", "hi": "स्यूडोमोनास फ्लोरेसेन्स बीज उपचार" },
+            "active_ingredient": "Pseudomonas fluorescens",
+            "dosage": "10 g/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Sudozone", "Bio-Cure B"],
+              "NG": ["BioShield PF", "IITA Bio-Protect"],
+              "US": ["BlightBan A506"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Thiram + Carbendazim seed treatment", "hi": "थीरम + कार्बेन्डाज़िम बीज उपचार" },
+            "active_ingredient": "Thiram 37.5% + Carbendazim 12.5%",
+            "dosage": "3 g/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Companion", "Vitavax Power"],
+              "NG": ["Apron Star"],
+              "US": ["Vitavax 200"]
+            }
+          },
+          {
+            "name": { "en": "Mancozeb seed treatment", "hi": "मैनकोज़ेब बीज उपचार" },
+            "active_ingredient": "Mancozeb 75% WP",
+            "dosage": "3 g/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Dithane M-45", "Indofil M-45"],
+              "NG": ["Dithane M-45"],
+              "US": ["Penncozeb"]
+            },
+            "banned_in": ["EU"]
+          }
+        ],
+        "cultural": [
+          { "en": "Use certified disease-free seed and treat seed with biocontrol agents before planting" },
+          { "en": "Avoid planting in fields with recent history of collar rot, maintain 3-year rotation" }
+        ]
+      },
+      "yield_impact": { "min_pct": 10, "max_pct": 40 },
+      "confusion_pairs": ["white_mold", "aspergillus_aflatoxin"],
+      "climate_triggers": {
+        "temp_min": 25,
+        "temp_max": 35,
+        "humidity_min": 70,
+        "rainfall_weekly_mm": 40,
+        "growth_stage_days": [0, 30]
+      }
+    },
+    {
+      "id": 8,
+      "label": "rosette_virus",
+      "name": { "en": "Groundnut Rosette Virus", "hi": "मूंगफली रोसेट वायरस" },
+      "scientific_name": "GRV + GRAV",
+      "category": "viral",
+      "severity_descriptions": {
+        "1": { "en": "Isolated plants showing slight leaf curling and mild chlorotic mottle, less than 2% incidence" },
+        "2": { "en": "Stunting visible in scattered plants (5-10%), leaves showing mosaic and downward curling" },
+        "3": { "en": "10-25% plants with severe stunting, rosette symptoms (bushy dwarfing), chlorotic or green rosette types" },
+        "4": { "en": "25-50% plants severely stunted and non-productive, heavy aphid vector populations present" },
+        "5": { "en": "Over 50% incidence, widespread plant stunting and sterility, near-total yield loss in affected patches" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Neem seed kernel extract for aphid control", "hi": "नीम बीज गिरी अर्क एफिड नियंत्रण" },
+            "active_ingredient": "Azadirachtin",
+            "dosage": "5% NSKE (50 g neem kernel powder per liter water)",
+            "frequency": "Every 7-10 days during aphid peak (20-40 DAS)",
+            "brands_by_region": {
+              "IN": ["Neem Guard", "Achook"],
+              "NG": ["Neem Pro"],
+              "US": ["AzaMax", "Neemix"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Imidacloprid seed treatment", "hi": "इमिडाक्लोप्रिड बीज उपचार" },
+            "active_ingredient": "Imidacloprid 600 FS",
+            "dosage": "2 mL/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Gaucho", "Confidor"],
+              "NG": ["Gaucho 70WS"],
+              "US": ["Gaucho 600", "Admire Pro"]
+            },
+            "banned_in": ["EU"]
+          },
+          {
+            "name": { "en": "Thiamethoxam foliar", "hi": "थायमेथोक्सैम पर्णीय स्प्रे" },
+            "active_ingredient": "Thiamethoxam 25% WG",
+            "dosage": "0.3 g/L water",
+            "frequency": "At 15 DAS and 30 DAS",
+            "brands_by_region": {
+              "IN": ["Actara", "Thiamex"],
+              "NG": ["Actara 25WG"],
+              "US": ["Actara", "Platinum"]
+            },
+            "banned_in": ["EU"]
+          }
+        ],
+        "cultural": [
+          { "en": "Plant early at recommended date to escape peak aphid vector flights" },
+          { "en": "Use resistant varieties like ICG 12991 or ICGV-SM 90704 where available" }
+        ]
+      },
+      "yield_impact": { "min_pct": 30, "max_pct": 100 },
+      "confusion_pairs": ["bud_necrosis", "peanut_mottle", "nitrogen_deficiency"],
+      "climate_triggers": {
+        "temp_min": 18,
+        "temp_max": 28,
+        "humidity_min": 60,
+        "rainfall_weekly_mm": 15,
+        "growth_stage_days": [15, 60]
+      }
+    },
+    {
+      "id": 9,
+      "label": "bud_necrosis",
+      "name": { "en": "Bud Necrosis Disease", "hi": "कली गलन रोग" },
+      "scientific_name": "PBNV",
+      "category": "viral",
+      "severity_descriptions": {
+        "1": { "en": "Occasional plants with mild necrotic rings on young leaves, less than 2% incidence" },
+        "2": { "en": "Necrotic spots on terminal buds in 5-10% of plants, mild axillary shoot proliferation" },
+        "3": { "en": "10-25% plants showing terminal bud death, axillary branching, and stunting" },
+        "4": { "en": "25-50% plants with dead terminal buds, severe stunting, mottled and distorted leaves" },
+        "5": { "en": "Over 50% incidence, widespread bud necrosis and plant death, negligible pod set" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Blue/yellow sticky traps for thrips monitoring", "hi": "थ्रिप्स निगरानी के लिए चिपचिपा जाल" },
+            "active_ingredient": "N/A (physical trap)",
+            "dosage": "20-25 traps per hectare",
+            "frequency": "Install at sowing, replace every 2 weeks",
+            "brands_by_region": {
+              "IN": ["Barrix Magicsticker", "Tapas Traps"],
+              "NG": ["Koppert Horiver"],
+              "US": ["Olson Yellow Sticky Traps"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Fipronil seed treatment", "hi": "फिप्रोनिल बीज उपचार" },
+            "active_ingredient": "Fipronil 5% SC",
+            "dosage": "6 mL/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Regent", "Fiproguard"],
+              "NG": ["Regent 50 SC"],
+              "US": []
+            },
+            "banned_in": ["EU"]
+          },
+          {
+            "name": { "en": "Spinosad foliar", "hi": "स्पिनोसैड पर्णीय स्प्रे" },
+            "active_ingredient": "Spinosad 45% SC",
+            "dosage": "0.3 mL/L water",
+            "frequency": "At thrips onset, repeat after 10-14 days",
+            "brands_by_region": {
+              "IN": ["Tracer 45 SC", "SpinTor"],
+              "NG": ["Tracer"],
+              "US": ["SpinTor 2SC", "Entrust SC"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Plant early to avoid peak thrips vector activity (Thrips palmi)" },
+          { "en": "Intercrop with fast-growing cereals like pearl millet as barrier crop to reduce thrips immigration" }
+        ]
+      },
+      "yield_impact": { "min_pct": 20, "max_pct": 80 },
+      "confusion_pairs": ["rosette_virus", "boron_deficiency"],
+      "climate_triggers": {
+        "temp_min": 25,
+        "temp_max": 35,
+        "humidity_min": 40,
+        "rainfall_weekly_mm": 5,
+        "growth_stage_days": [10, 45]
+      }
+    },
+    {
+      "id": 10,
+      "label": "peanut_mottle",
+      "name": { "en": "Peanut Mottle Virus", "hi": "मूंगफली मॉटल वायरस" },
+      "scientific_name": "PMV",
+      "category": "viral",
+      "severity_descriptions": {
+        "1": { "en": "Mild green mottle/mosaic on young leaves of scattered plants, less than 5% incidence" },
+        "2": { "en": "Clear light and dark green mosaic on 5-15% of plants, slight leaf distortion" },
+        "3": { "en": "Mottle and mild stunting in 15-30% plants, some leaf puckering and vein banding" },
+        "4": { "en": "30-50% plants with obvious mosaic, stunting, and reduced pod fill" },
+        "5": { "en": "Over 50% plants affected with severe mosaic, stunting, and poor seed quality" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Reflective mulch for aphid deterrence", "hi": "एफिड रोकथाम के लिए परावर्तक मल्च" },
+            "active_ingredient": "N/A (physical barrier)",
+            "dosage": "Silver reflective mulch between rows",
+            "frequency": "Applied at planting, maintained through 45 DAS",
+            "brands_by_region": {
+              "IN": ["Local silver polyethylene mulch"],
+              "NG": ["Local silver mulch"],
+              "US": ["ReflecTek Foils"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Imidacloprid foliar for aphid vector control", "hi": "एफिड नियंत्रण के लिए इमिडाक्लोप्रिड" },
+            "active_ingredient": "Imidacloprid 17.8% SL",
+            "dosage": "0.3 mL/L water",
+            "frequency": "At aphid appearance, max 2 applications 14 days apart",
+            "brands_by_region": {
+              "IN": ["Confidor 17.8 SL", "Tatamida"],
+              "NG": ["Confidor 200 SL"],
+              "US": ["Admire Pro", "Marathon II"]
+            },
+            "banned_in": ["EU"]
+          }
+        ],
+        "cultural": [
+          { "en": "Use virus-free certified seed from known healthy seed sources" },
+          { "en": "Rogue and remove symptomatic plants early (before 30 DAS) to reduce within-field spread" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 30 },
+      "confusion_pairs": ["rosette_virus", "nitrogen_deficiency", "iron_chlorosis"],
+      "climate_triggers": {
+        "temp_min": 20,
+        "temp_max": 30,
+        "humidity_min": 50,
+        "rainfall_weekly_mm": 10,
+        "growth_stage_days": [15, 70]
+      }
+    },
+    {
+      "id": 11,
+      "label": "bacterial_wilt",
+      "name": { "en": "Bacterial Wilt", "hi": "जीवाणु म्लानि" },
+      "scientific_name": "Ralstonia solanacearum",
+      "category": "bacterial",
+      "severity_descriptions": {
+        "1": { "en": "Occasional plant wilting during midday heat, recovering by evening, less than 2% incidence" },
+        "2": { "en": "Persistent wilting in 5-10% plants, leaves drooping without yellowing, vascular browning in stem cross-section" },
+        "3": { "en": "10-25% plants permanently wilted and dying, brown ooze from cut stems in water test" },
+        "4": { "en": "25-50% stand loss, entire rows collapsing, rapid spread along irrigation channels" },
+        "5": { "en": "Over 50% plants dead, field sections abandoned, soil heavily contaminated" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Pseudomonas fluorescens soil application", "hi": "स्यूडोमोनास फ्लोरेसेन्स मिट्टी अनुप्रयोग" },
+            "active_ingredient": "Pseudomonas fluorescens",
+            "dosage": "2.5 kg/ha enriched in 100 kg FYM",
+            "frequency": "Applied at planting and 30 DAS",
+            "brands_by_region": {
+              "IN": ["Sudozone", "Plantomycin Bio"],
+              "NG": [],
+              "US": ["BlightBan A506"]
+            }
+          },
+          {
+            "name": { "en": "Lime application for pH management", "hi": "पीएच प्रबंधन के लिए चूना" },
+            "active_ingredient": "Calcium carbonate (agricultural lime)",
+            "dosage": "2-4 tonnes/ha to raise soil pH above 6.5",
+            "frequency": "Once before planting, based on soil test",
+            "brands_by_region": {
+              "IN": ["Agricultural lime (local)"],
+              "NG": ["Agricultural lime (local)"],
+              "US": ["Hi-Cal Lime", "Pelletized Lime"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Streptomycin sulfate + Tetracycline soil drench", "hi": "स्ट्रेप्टोमाइसिन + टेट्रासाइक्लिन मिट्टी ड्रेंच" },
+            "active_ingredient": "Streptomycin sulfate 9% + Tetracycline hydrochloride 1%",
+            "dosage": "0.5 g/L water soil drench",
+            "frequency": "At first symptoms, repeat after 10 days, max 3 applications",
+            "brands_by_region": {
+              "IN": ["Streptocycline", "Paushamycin"],
+              "NG": ["Agrimycin"],
+              "US": ["Agri-Mycin 17"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Practice long rotation (4-5 years) with non-solanaceous, non-leguminous crops like rice or maize" },
+          { "en": "Improve field drainage and avoid waterlogging which facilitates bacterial spread" }
+        ]
+      },
+      "yield_impact": { "min_pct": 20, "max_pct": 100 },
+      "confusion_pairs": ["white_mold", "drought_stress"],
+      "climate_triggers": {
+        "temp_min": 25,
+        "temp_max": 37,
+        "humidity_min": 70,
+        "rainfall_weekly_mm": 50,
+        "growth_stage_days": [20, 120]
+      }
+    },
+    {
+      "id": 12,
+      "label": "root_knot_nematode",
+      "name": { "en": "Root-Knot Nematode", "hi": "जड़ गांठ सूत्रकृमि" },
+      "scientific_name": "Meloidogyne arenaria",
+      "category": "nematode",
+      "severity_descriptions": {
+        "1": { "en": "Mild stunting in sandy patches, root galls small and few, visible only on uprooted plants" },
+        "2": { "en": "Patchy yellowing and slight stunting in 5-15% of field, moderate root galling" },
+        "3": { "en": "Obvious stunted patches covering 15-30% of field, heavy root galling, pods with pegged appearance" },
+        "4": { "en": "30-50% of plants severely stunted with extensive galling, pod pegs damaged, secondary rot infections" },
+        "5": { "en": "Over 50% field showing severe decline, massive root galling, plant death in patches, pod discoloration" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Paecilomyces lilacinus biocontrol", "hi": "पैसीलोमाइसेस लिलैसिनस जैव नियंत्रण" },
+            "active_ingredient": "Paecilomyces lilacinus",
+            "dosage": "5 kg/ha mixed with FYM at sowing",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Bio-Nematon", "Paecilo Guard"],
+              "NG": ["Real IPM Paecilo", "IITA NemaBio"],
+              "US": ["MeloCon WG"]
+            }
+          },
+          {
+            "name": { "en": "Neem cake soil amendment", "hi": "नीम खली मिट्टी उपचार" },
+            "active_ingredient": "Neem cake (deoiled)",
+            "dosage": "250-500 kg/ha incorporated at last plowing",
+            "frequency": "Once at land preparation",
+            "brands_by_region": {
+              "IN": ["Neem Gold Cake", "Fortune Neem Cake"],
+              "NG": ["Neem cake (local)"],
+              "US": ["Neem cake (specialty suppliers)"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Fluopyram seed treatment", "hi": "फ्लुओपाइरम बीज उपचार" },
+            "active_ingredient": "Fluopyram 34.48% SC",
+            "dosage": "0.57 mL/kg seed",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Velum Prime"],
+              "NG": [],
+              "US": ["Velum Total", "ILeVO"]
+            }
+          },
+          {
+            "name": { "en": "Carbofuran granules", "hi": "कार्बोफ्यूरान दानेदार" },
+            "active_ingredient": "Carbofuran 3% CG",
+            "dosage": "33 kg/ha in furrow at sowing",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Furadan 3G", "Carbofuran 3G"],
+              "NG": ["Furadan 3G"],
+              "US": []
+            },
+            "banned_in": ["EU", "US"]
+          }
+        ],
+        "cultural": [
+          { "en": "Rotate with non-host crops like sorghum, maize, or sesame for 2-3 seasons" },
+          { "en": "Deep summer plowing to expose nematode eggs to desiccation and UV radiation" }
+        ]
+      },
+      "yield_impact": { "min_pct": 10, "max_pct": 50 },
+      "confusion_pairs": ["nitrogen_deficiency", "drought_stress"],
+      "climate_triggers": {
+        "temp_min": 22,
+        "temp_max": 35,
+        "humidity_min": 50,
+        "rainfall_weekly_mm": 15,
+        "growth_stage_days": [20, 130]
+      }
+    },
+    {
+      "id": 13,
+      "label": "iron_chlorosis",
+      "name": { "en": "Iron Chlorosis", "hi": "लौह क्लोरोसिस" },
+      "scientific_name": "",
+      "category": "nutritional",
+      "severity_descriptions": {
+        "1": { "en": "Faint interveinal yellowing on youngest leaves, veins remain green" },
+        "2": { "en": "Clear interveinal chlorosis on new growth, older leaves still green" },
+        "3": { "en": "Young leaves uniformly pale yellow with distinct green veins, some bleaching" },
+        "4": { "en": "Severe chlorosis progressing to white/bleached young leaves, growth retarded" },
+        "5": { "en": "Terminal leaves white and necrotic, plant stunted severely, may die if uncorrected" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Ferrous sulfate foliar spray", "hi": "फेरस सल्फेट पर्णीय स्प्रे" },
+            "active_ingredient": "Ferrous sulfate (FeSO4.7H2O)",
+            "dosage": "5 g/L water + 2.5 g/L citric acid as adjuvant",
+            "frequency": "2-3 sprays at 10-day intervals starting at symptom onset",
+            "brands_by_region": {
+              "IN": ["Ferrous sulfate (generic agricultural grade)"],
+              "NG": ["Ferrous sulfate (generic)"],
+              "US": ["IronSul", "Copperas"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Fe-EDDHA chelated iron", "hi": "Fe-EDDHA चीलेटेड आयरन" },
+            "active_ingredient": "Iron EDDHA 6%",
+            "dosage": "10-20 g per plant soil application or 2 g/L foliar",
+            "frequency": "Once at symptom onset, repeat after 3 weeks if needed",
+            "brands_by_region": {
+              "IN": ["Sequestrene 138 Fe", "Chela Fe"],
+              "NG": ["Sequestrene"],
+              "US": ["Sprint 138", "Sequestrene 138 Fe"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Lower soil pH with sulfur or ammonium-based fertilizers to improve iron availability" },
+          { "en": "Avoid over-liming and ensure adequate organic matter to chelate soil iron naturally" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 30 },
+      "confusion_pairs": ["nitrogen_deficiency", "peanut_mottle"],
+      "climate_triggers": {
+        "temp_min": 15,
+        "temp_max": 40,
+        "humidity_min": 30,
+        "rainfall_weekly_mm": 5,
+        "growth_stage_days": [10, 60]
+      }
+    },
+    {
+      "id": 14,
+      "label": "nitrogen_deficiency",
+      "name": { "en": "Nitrogen Deficiency", "hi": "नाइट्रोजन की कमी" },
+      "scientific_name": "",
+      "category": "nutritional",
+      "severity_descriptions": {
+        "1": { "en": "Slight overall pale green color, older leaves marginally lighter than normal" },
+        "2": { "en": "Older leaves clearly yellowing (uniform chlorosis), plant growth slightly reduced" },
+        "3": { "en": "Pronounced yellowing of older leaves progressing upward, reduced branching and canopy" },
+        "4": { "en": "Severe chlorosis with lower leaf necrosis and drop, stunted plants, poor pod set" },
+        "5": { "en": "Generalized chlorosis throughout plant, extensive leaf senescence, minimal pod development" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Rhizobium inoculant", "hi": "राइज़ोबियम टीका" },
+            "active_ingredient": "Bradyrhizobium sp. (Arachis)",
+            "dosage": "200 g inoculant per 10 kg seed, slurry coat before sowing",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Rhizo Gold", "TNAU Rhizobium"],
+              "NG": ["N2Africa Rhizobium", "Legumefix"],
+              "US": ["Vault NP", "Cell-Tech"]
+            }
+          },
+          {
+            "name": { "en": "Vermicompost application", "hi": "वर्मीकम्पोस्ट अनुप्रयोग" },
+            "active_ingredient": "Earthworm castings",
+            "dosage": "2-3 tonnes/ha incorporated at land preparation",
+            "frequency": "Once at planting",
+            "brands_by_region": {
+              "IN": ["Local vermicompost"],
+              "NG": ["Local vermicompost"],
+              "US": ["Wiggle Worm", "Worm Power"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Urea foliar spray (emergency)", "hi": "यूरिया पर्णीय स्प्रे (आपातकालीन)" },
+            "active_ingredient": "Urea 46% N",
+            "dosage": "20 g/L water (2% solution) foliar spray",
+            "frequency": "2 sprays at 7-day intervals, avoid during flowering",
+            "brands_by_region": {
+              "IN": ["IFFCO Urea", "NFL Urea"],
+              "NG": ["Notore Urea", "Indorama Urea"],
+              "US": ["Urea 46-0-0 (generic)"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Inoculate seed with Bradyrhizobium to ensure effective nitrogen fixation" },
+          { "en": "Apply starter nitrogen (20 kg N/ha) only if soil is known to lack native rhizobia" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 25 },
+      "confusion_pairs": ["iron_chlorosis", "rosette_virus", "peanut_mottle"],
+      "climate_triggers": {
+        "temp_min": 15,
+        "temp_max": 40,
+        "humidity_min": 30,
+        "rainfall_weekly_mm": 10,
+        "growth_stage_days": [10, 130]
+      }
+    },
+    {
+      "id": 15,
+      "label": "calcium_deficiency",
+      "name": { "en": "Calcium Deficiency (Pops / Empty Pods)", "hi": "कैल्शियम की कमी (खाली फलियाँ)" },
+      "scientific_name": "",
+      "category": "nutritional",
+      "severity_descriptions": {
+        "1": { "en": "Slightly reduced pod fill, 5-10% empty or dark-skinned pods at harvest" },
+        "2": { "en": "10-20% pods with poor fill, dark inner shell, occasional pops visible" },
+        "3": { "en": "20-35% pops/unfilled pods, shriveled kernels, dark pod inner surface common" },
+        "4": { "en": "35-50% empty pods, significant kernel abortion, yield seriously reduced" },
+        "5": { "en": "Over 50% pops, most pods empty or poorly filled, kernels dark and unmarketable" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Gypsum (land plaster) application", "hi": "जिप्सम अनुप्रयोग" },
+            "active_ingredient": "Calcium sulfate dihydrate (CaSO4.2H2O)",
+            "dosage": "400-500 kg/ha broadcast at pegging stage (40-50 DAS)",
+            "frequency": "Once at pegging",
+            "brands_by_region": {
+              "IN": ["Agricultural gypsum (GSFC)", "Phosphogypsum"],
+              "NG": ["Agricultural gypsum (local)"],
+              "US": ["USA Gypsum", "Cal-Sul"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Calcium nitrate foliar", "hi": "कैल्शियम नाइट्रेट पर्णीय स्प्रे" },
+            "active_ingredient": "Calcium nitrate (Ca(NO3)2)",
+            "dosage": "10 g/L water foliar spray",
+            "frequency": "2 sprays at pegging and pod development stages",
+            "brands_by_region": {
+              "IN": ["Yara CalciNit", "Aries Calcium Nitrate"],
+              "NG": ["YaraTera Calcinit"],
+              "US": ["YaraLiva Calcinit", "15.5-0-0"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Apply gypsum at pegging (40-50 DAS) to ensure calcium availability in the pod zone" },
+          { "en": "Maintain soil pH between 5.8 and 6.5 for optimal calcium uptake" }
+        ]
+      },
+      "yield_impact": { "min_pct": 10, "max_pct": 40 },
+      "confusion_pairs": ["boron_deficiency"],
+      "climate_triggers": {
+        "temp_min": 20,
+        "temp_max": 38,
+        "humidity_min": 30,
+        "rainfall_weekly_mm": 5,
+        "growth_stage_days": [45, 120]
+      }
+    },
+    {
+      "id": 16,
+      "label": "boron_deficiency",
+      "name": { "en": "Boron Deficiency (Hollow Heart)", "hi": "बोरोन की कमी (खोखला दिल)" },
+      "scientific_name": "",
+      "category": "nutritional",
+      "severity_descriptions": {
+        "1": { "en": "Internal darkening of cotyledons visible only on cut kernel examination, no external symptoms" },
+        "2": { "en": "Hollow heart visible in 10-20% of kernels, slight stunting of terminal buds" },
+        "3": { "en": "20-35% kernels with hollow heart, thickened brittle leaves, poor flower set" },
+        "4": { "en": "35-50% kernels affected, shortened internodes, cracked stems, severely reduced pod set" },
+        "5": { "en": "Over 50% kernels hollow, terminal bud death, plant severely stunted and deformed" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Borax soil application", "hi": "बोरेक्स मिट्टी अनुप्रयोग" },
+            "active_ingredient": "Sodium tetraborate (Na2B4O7.10H2O)",
+            "dosage": "10-15 kg/ha borax broadcast and incorporated before sowing",
+            "frequency": "Once at land preparation, based on soil test",
+            "brands_by_region": {
+              "IN": ["Borax (20 Mule Team equivalent)", "Agricultural borax"],
+              "NG": ["Agricultural borax"],
+              "US": ["20 Mule Team Borax", "Solubor"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Solubor foliar spray", "hi": "सोल्यूबोर पर्णीय स्प्रे" },
+            "active_ingredient": "Sodium octaborate tetrahydrate (20.5% B)",
+            "dosage": "1.5-2 g/L water",
+            "frequency": "2 sprays: at flowering (35-40 DAS) and at pegging (50-55 DAS)",
+            "brands_by_region": {
+              "IN": ["Solubor DF", "Boron 20"],
+              "NG": ["Solubor"],
+              "US": ["Solubor DF", "LiBor"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Conduct soil and tissue boron tests before planting; target soil B above 0.5 ppm" },
+          { "en": "Avoid over-liming which can induce boron deficiency; maintain pH below 7.0" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 30 },
+      "confusion_pairs": ["calcium_deficiency", "bud_necrosis"],
+      "climate_triggers": {
+        "temp_min": 18,
+        "temp_max": 38,
+        "humidity_min": 30,
+        "rainfall_weekly_mm": 5,
+        "growth_stage_days": [30, 100]
+      }
+    },
+    {
+      "id": 17,
+      "label": "drought_stress",
+      "name": { "en": "Drought Stress", "hi": "सूखा तनाव" },
+      "scientific_name": "",
+      "category": "abiotic",
+      "severity_descriptions": {
+        "1": { "en": "Mild midday wilting with full recovery by morning, leaves slightly droopy" },
+        "2": { "en": "Persistent leaf folding/rolling, delayed recovery, slight growth reduction" },
+        "3": { "en": "Pronounced wilting, lower leaf yellowing and drop, flowering and pegging reduced" },
+        "4": { "en": "Severe wilting, extensive premature leaf senescence, poor pod fill, plant semi-dormant" },
+        "5": { "en": "Irreversible wilting, widespread plant death, pods shriveled, near-total yield loss" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Mulching for moisture conservation", "hi": "नमी संरक्षण के लिए मल्चिंग" },
+            "active_ingredient": "N/A (physical practice)",
+            "dosage": "5-7 cm layer of straw/crop residue mulch between rows",
+            "frequency": "Applied at sowing or at canopy closure",
+            "brands_by_region": {
+              "IN": ["Rice straw / sugarcane trash (local)"],
+              "NG": ["Millet stover (local)"],
+              "US": ["Wheat straw mulch (local)"]
+            }
+          },
+          {
+            "name": { "en": "Potassium silicate foliar spray", "hi": "पोटैशियम सिलिकेट पर्णीय स्प्रे" },
+            "active_ingredient": "Potassium silicate (K2SiO3)",
+            "dosage": "3 mL/L water",
+            "frequency": "2-3 sprays during dry spells at 10-day intervals",
+            "brands_by_region": {
+              "IN": ["Sili-K", "AgriSil"],
+              "NG": [],
+              "US": ["ProTek", "AgriSil K"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Salicylic acid foliar (stress priming)", "hi": "सैलिसिलिक एसिड पर्णीय स्प्रे (तनाव प्राइमिंग)" },
+            "active_ingredient": "Salicylic acid",
+            "dosage": "0.1 mM solution (14 mg/L water)",
+            "frequency": "Spray at onset of drought stress, repeat after 10 days",
+            "brands_by_region": {
+              "IN": ["Salicylic acid (AR grade from agri suppliers)"],
+              "NG": ["Salicylic acid (generic)"],
+              "US": ["Salicylic acid (generic lab/agri grade)"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Adopt supplemental irrigation at critical stages: flowering (35-50 DAS) and pod fill (70-95 DAS)" },
+          { "en": "Select drought-tolerant varieties like ICGV 91114 or TAG 24 for rain-fed conditions" }
+        ]
+      },
+      "yield_impact": { "min_pct": 10, "max_pct": 70 },
+      "confusion_pairs": ["bacterial_wilt", "root_knot_nematode"],
+      "climate_triggers": {
+        "temp_min": 30,
+        "temp_max": 45,
+        "humidity_min": 20,
+        "rainfall_weekly_mm": 0,
+        "growth_stage_days": [30, 130]
+      }
+    },
+    {
+      "id": 18,
+      "label": "herbicide_injury",
+      "name": { "en": "Herbicide Injury", "hi": "शाकनाशी क्षति" },
+      "scientific_name": "",
+      "category": "abiotic",
+      "severity_descriptions": {
+        "1": { "en": "Mild leaf cupping or crinkling on new growth, plants recover within 7-10 days" },
+        "2": { "en": "Noticeable leaf distortion, yellowing or bleaching in patches, slight stunting" },
+        "3": { "en": "Significant leaf burn/necrosis, stem twisting or epinasty, moderate stunting across 15-30% of field" },
+        "4": { "en": "Severe foliar necrosis, growth cessation, 30-50% of plants visibly damaged, poor pod set" },
+        "5": { "en": "Widespread plant death or severe deformation, over 50% stand loss, replanting may be needed" }
+      },
+      "treatments": {
+        "organic": [
+          {
+            "name": { "en": "Activated charcoal soil application", "hi": "सक्रिय चारकोल मिट्टी अनुप्रयोग" },
+            "active_ingredient": "Activated carbon",
+            "dosage": "200-400 kg/ha surface application and light incorporation",
+            "frequency": "Once immediately after herbicide exposure",
+            "brands_by_region": {
+              "IN": ["Activated charcoal (industrial grade)"],
+              "NG": ["Activated charcoal (local)"],
+              "US": ["Norit Activated Carbon", "Gro-Safe"]
+            }
+          }
+        ],
+        "chemical": [
+          {
+            "name": { "en": "Gibberellic acid growth recovery spray", "hi": "जिबरेलिक एसिड वृद्धि पुनर्प्राप्ति स्प्रे" },
+            "active_ingredient": "Gibberellic acid (GA3)",
+            "dosage": "25-50 ppm (25-50 mg/L water)",
+            "frequency": "1-2 sprays after herbicide injury symptoms appear",
+            "brands_by_region": {
+              "IN": ["Progibb", "Gibbergold"],
+              "NG": ["ProGibb"],
+              "US": ["ProGibb T&O", "RyzUp SmartGrass"]
+            }
+          }
+        ],
+        "cultural": [
+          { "en": "Irrigate thoroughly to leach herbicide residue below the root zone if soil-applied" },
+          { "en": "Apply foliar nutrients (NPK 19-19-19 at 5 g/L) to support plant recovery after injury" }
+        ]
+      },
+      "yield_impact": { "min_pct": 5, "max_pct": 50 },
+      "confusion_pairs": ["drought_stress", "boron_deficiency"],
+      "climate_triggers": {
+        "temp_min": 15,
+        "temp_max": 40,
+        "humidity_min": 20,
+        "rainfall_weekly_mm": 0,
+        "growth_stage_days": [0, 130]
+      }
+    }
+  ]
+}

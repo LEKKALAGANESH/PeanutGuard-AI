@@ -1,0 +1,242 @@
+'use client';
+
+import { useCallback } from 'react';
+import { jsPDF } from 'jspdf';
+import type { BulkScanItem } from '@/types/desktop';
+
+// Color palette (matches report-generator.ts)
+const COLOR_PRIMARY: [number, number, number] = [34, 120, 60];
+const COLOR_TEXT: [number, number, number] = [33, 33, 33];
+const COLOR_SECONDARY: [number, number, number] = [100, 100, 100];
+const COLOR_DIVIDER: [number, number, number] = [200, 200, 200];
+
+const PAGE_WIDTH = 210;
+const PAGE_HEIGHT = 297;
+const MARGIN_LEFT = 20;
+const MARGIN_RIGHT = 20;
+const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
+const FOOTER_Y = PAGE_HEIGHT - 15;
+
+function drawSectionTitle(doc: jsPDF, title: string, y: number): number {
+  doc.setFontSize(13);
+  doc.setTextColor(...COLOR_PRIMARY);
+  doc.setFont('helvetica', 'bold');
+  doc.text(title, MARGIN_LEFT, y);
+  return y + 7;
+}
+
+function drawDivider(doc: jsPDF, y: number): number {
+  doc.setDrawColor(...COLOR_DIVIDER);
+  doc.setLineWidth(0.3);
+  doc.line(MARGIN_LEFT, y, PAGE_WIDTH - MARGIN_RIGHT, y);
+  return y + 4;
+}
+
+function checkPageBreak(doc: jsPDF, y: number, space: number): number {
+  if (y + space > FOOTER_Y - 10) {
+    doc.addPage();
+    return 20;
+  }
+  return y;
+}
+
+function drawWrappedText(
+  doc: jsPDF,
+  text: string,
+  x: number,
+  y: number,
+  maxWidth: number,
+  lineHeight: number = 5,
+): number {
+  const lines: string[] = doc.splitTextToSize(text, maxWidth) as string[];
+  for (const line of lines) {
+    if (y > FOOTER_Y - 10) {
+      doc.addPage();
+      y = 20;
+    }
+    doc.text(line, x, y);
+    y += lineHeight;
+  }
+  return y;
+}
+
+export function useBatchExport() {
+  const exportBatchPDF = useCallback(async (items: BulkScanItem[]) => {
+    const completed = items.filter(
+      (i) => i.status === 'complete' && i.result,
+    );
+    if (completed.length === 0) return;
+
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    let y = 20;
+
+    // Title page
+    doc.setFontSize(20);
+    doc.setTextColor(...COLOR_PRIMARY);
+    doc.setFont('helvetica', 'bold');
+    doc.text('PeanutGuard AI', MARGIN_LEFT, y);
+    y += 8;
+
+    doc.setFontSize(14);
+    doc.setTextColor(...COLOR_TEXT);
+    doc.text('Batch Diagnostic Report', MARGIN_LEFT, y);
+    y += 6;
+
+    doc.setFontSize(9);
+    doc.setTextColor(...COLOR_SECONDARY);
+    doc.setFont('helvetica', 'normal');
+    doc.text(new Date().toLocaleString(), MARGIN_LEFT, y);
+    y += 4;
+
+    doc.text(`Total images analyzed: ${completed.length}`, MARGIN_LEFT, y);
+    y += 6;
+
+    y = drawDivider(doc, y);
+
+    // Summary stats
+    let healthy = 0;
+    let diseased = 0;
+    const diseaseMap: Record<string, number> = {};
+
+    for (const item of completed) {
+      const top = item.result!.predictions[0];
+      if (!top || top.diseaseLabel === 'healthy') {
+        healthy++;
+      } else {
+        diseased++;
+        diseaseMap[top.diseaseLabel] = (diseaseMap[top.diseaseLabel] ?? 0) + 1;
+      }
+    }
+
+    y = drawSectionTitle(doc, 'Summary', y);
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(...COLOR_TEXT);
+    doc.text(`Healthy: ${healthy}`, MARGIN_LEFT, y);
+    y += 5;
+    doc.text(`Diseased: ${diseased}`, MARGIN_LEFT, y);
+    y += 5;
+
+    if (Object.keys(diseaseMap).length > 0) {
+      y += 2;
+      doc.setFont('helvetica', 'bold');
+      doc.text('Disease Distribution:', MARGIN_LEFT, y);
+      y += 5;
+      doc.setFont('helvetica', 'normal');
+
+      for (const [disease, count] of Object.entries(diseaseMap).sort(
+        (a, b) => b[1] - a[1],
+      )) {
+        y = checkPageBreak(doc, y, 6);
+        doc.text(`  ${disease.replace(/_/g, ' ')}: ${count}`, MARGIN_LEFT, y);
+        y += 5;
+      }
+    }
+
+    y = drawDivider(doc, y + 2);
+
+    // Individual results
+    y = drawSectionTitle(doc, 'Individual Results', y);
+
+    for (const item of completed) {
+      y = checkPageBreak(doc, y, 30);
+
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(...COLOR_TEXT);
+      doc.text(item.fileName, MARGIN_LEFT, y);
+      y += 5;
+
+      const top = item.result!.predictions[0];
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+
+      if (top) {
+        const conf = Math.round(top.confidence * 100);
+        const disease = top.diseaseLabel.replace(/_/g, ' ');
+        doc.text(
+          `Diagnosis: ${disease} (${conf}%) | Severity: ${item.result!.severityScore}/5`,
+          MARGIN_LEFT + 2,
+          y,
+        );
+      } else {
+        doc.text('No diagnosis available', MARGIN_LEFT + 2, y);
+      }
+      y += 5;
+
+      doc.setDrawColor(...COLOR_DIVIDER);
+      doc.setLineWidth(0.1);
+      doc.line(MARGIN_LEFT, y, PAGE_WIDTH - MARGIN_RIGHT, y);
+      y += 3;
+    }
+
+    // Footer
+    const pageCount = doc.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(7);
+      doc.setTextColor(...COLOR_SECONDARY);
+      doc.setFont('helvetica', 'normal');
+      doc.text(
+        'Generated by PeanutGuard AI | This report does not replace professional agronomist advice',
+        PAGE_WIDTH / 2,
+        FOOTER_Y,
+        { align: 'center' },
+      );
+      doc.text(`Page ${i} of ${pageCount}`, PAGE_WIDTH - MARGIN_RIGHT, FOOTER_Y, {
+        align: 'right',
+      });
+    }
+
+    // Download
+    const blob = doc.output('blob');
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `PeanutGuard_Batch_${new Date().toISOString().split('T')[0]}.pdf`;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => {
+      try { URL.revokeObjectURL(url); } catch { /* already revoked */ }
+      try { if (link.parentNode) link.parentNode.removeChild(link); } catch { /* already removed */ }
+    }, 1000);
+  }, []);
+
+  const exportCSV = useCallback(async (items: BulkScanItem[]) => {
+    const completed = items.filter(
+      (i) => i.status === 'complete' && i.result,
+    );
+    if (completed.length === 0) return;
+
+    const header = 'Filename,Disease,Confidence,Severity,Model\n';
+    const rows = completed.map((item) => {
+      const top = item.result!.predictions[0];
+      const disease = top?.diseaseLabel.replace(/_/g, ' ') ?? 'unknown';
+      const confidence = top ? Math.round(top.confidence * 100) : 0;
+      const severity = item.result!.severityScore;
+      const model = item.result!.modelUsed;
+      // Escape filenames with commas
+      const safeName = item.fileName.includes(',')
+        ? `"${item.fileName}"`
+        : item.fileName;
+      return `${safeName},${disease},${confidence}%,${severity}/5,${model}`;
+    });
+
+    const csv = header + rows.join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `PeanutGuard_Batch_${new Date().toISOString().split('T')[0]}.csv`;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => {
+      try { URL.revokeObjectURL(url); } catch { /* already revoked */ }
+      try { if (link.parentNode) link.parentNode.removeChild(link); } catch { /* already removed */ }
+    }, 1000);
+  }, []);
+
+  return { exportBatchPDF, exportCSV };
+}

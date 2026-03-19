@@ -1,0 +1,18 @@
+filename,expected_label,disease_category,quality_status,blur_score,brightness,green_coverage_pct,brown_coverage_pct,plant_tissue_pct,issues,augmentation_recovery,treatment_recommendation,original_width,original_height,dynamic_range,clipped_dark_pct,clipped_bright_pct
+"Aspergillus Crown Rot.jpg",aspergillus_aflatoxin,fungal,PASS,585.1,143.5,22.3,47.2,69.4,"",N/A,"[Organic] Atoxigenic Aspergillus biocontrol: 10 kg/ha soil application | [Chemical] Carbendazim seed treatment: 2 g/kg seed as dry seed treatment",204,192,210,0.0,10.9
+"Cylindrocladium Black Rot (CBR).jpg",collar_rot,fungal,PASS,816.3,84.5,61.2,61.1,100.0,"",N/A,"[Organic] Trichoderma viride seed treatment: 4 g/kg seed | [Chemical] Thiram + Carbendazim seed treatment: 3 g/kg seed",223,148,174,0.3,0.1
+"download.jpg",unknown,unknown,PASS,445.6,133.5,57.5,4.0,61.5,"",N/A,"N/A",178,148,212,0.0,7.0
+"Groundnut_Botrytis-blight_3.png",white_mold,fungal,PASS,1264.1,108.9,65.7,15.2,80.9,"",N/A,"[Organic] Trichoderma harzianum soil drench: 5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS | [Chemical] Tebuconazole soil drench: 1.5 mL/L water as soil drench around stem base",479,363,199,0.0,2.7
+"images (1).jpg",unknown,unknown,PASS,5323.5,121.3,49.1,3.8,52.9,"",N/A,"N/A",259,194,179,0.2,0.0
+"images (2).jpg",unknown,unknown,PASS,913.5,119.1,83.3,61.9,100.0,"",N/A,"N/A",259,194,131,0.0,0.0
+"images (3).jpg",unknown,unknown,PASS,1422.2,146.0,25.3,25.6,50.9,"",N/A,"N/A",268,188,138,0.4,0.0
+"images (4).jpg",unknown,unknown,PASS,13728.5,111.5,82.8,71.7,100.0,"",N/A,"N/A",259,194,174,1.3,0.1
+"images (5).jpg",unknown,unknown,PASS,1075.1,133.2,75.7,85.2,100.0,"",N/A,"N/A",226,223,218,4.3,0.0
+"images (6).jpg",unknown,unknown,SOFT_PASS,194.5,112.9,10.5,19.4,29.9,"LOW_COVERAGE",RECOVERED_CONTRAST_1.3x,"N/A",225,225,150,0.0,0.0
+"images.jpg",unknown,unknown,PASS,1694.4,144.2,61.1,10.1,71.2,"",N/A,"N/A",300,168,182,0.0,4.2
+"images_1.jpg",unknown,unknown,FAIL,304.8,164.1,13.6,9.5,23.1,"LOW_COVERAGE",NOT_RECOVERABLE,"N/A",259,194,139,0.0,0.0
+"Rhizoctonia Limb Rot.jpg",white_mold,fungal,SOFT_PASS,98.2,115.4,33.1,68.7,100.0,"BLUR",RECOVERED_CONTRAST_1.3x,"[Organic] Trichoderma harzianum soil drench: 5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS | [Chemical] Tebuconazole soil drench: 1.5 mL/L water as soil drench around stem base",185,174,146,0.0,0.0
+"Root-Knot Nematodes.jpg",root_knot_nematode,nematode,PASS,1951.3,131.6,13.9,58.7,72.5,"",N/A,"[Organic] Paecilomyces lilacinus biocontrol: 5 kg/ha mixed with FYM at sowing | [Chemical] Fluopyram seed treatment: 0.57 mL/kg seed",204,192,190,0.0,1.9
+"Sclerotinia Blight.jpg",white_mold,fungal,PASS,1035.8,121.6,22.0,43.1,65.1,"",N/A,"[Organic] Trichoderma harzianum soil drench: 5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS | [Chemical] Tebuconazole soil drench: 1.5 mL/L water as soil drench around stem base",192,179,197,0.0,1.5
+"Tomato Spotted Wilt Virus (TSWV).jpg",bud_necrosis,viral,PASS,1178.7,124.9,37.2,17.6,54.8,"",N/A,"[Organic] Blue/yellow sticky traps for thrips monitoring: 20-25 traps per hectare | [Chemical] Fipronil seed treatment: 6 mL/kg seed",257,148,171,0.0,0.0
+"unnamed.jpg",unknown,unknown,PASS,539.6,122.0,79.9,62.8,100.0,"",N/A,"N/A",168,166,217,1.6,0.5

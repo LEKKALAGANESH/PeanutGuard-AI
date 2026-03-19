@@ -1,0 +1,485 @@
+{
+  "generated": "2026-03-19T15:42:18.172Z",
+  "imagesDir": "D:\\Desktop\\peanut crop diseases\\testing images",
+  "images": [
+    {
+      "filename": "Aspergillus Crown Rot.jpg",
+      "expectedLabel": "aspergillus_aflatoxin",
+      "category": "fungal",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 585.1,
+        "brightness": 143.5,
+        "greenCoverage": 22.3,
+        "brownCoverage": 47.2,
+        "plantTissueCoverage": 69.4,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 210,
+        "p5": 44,
+        "p95": 254,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 10.9
+      },
+      "originalSize": {
+        "width": 204,
+        "height": 192
+      },
+      "treatment": "[Organic] Atoxigenic Aspergillus biocontrol: 10 kg/ha soil application | [Chemical] Carbendazim seed treatment: 2 g/kg seed as dry seed treatment"
+    },
+    {
+      "filename": "Cylindrocladium Black Rot (CBR).jpg",
+      "expectedLabel": "collar_rot",
+      "category": "fungal",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 816.3,
+        "brightness": 84.5,
+        "greenCoverage": 61.2,
+        "brownCoverage": 61.1,
+        "plantTissueCoverage": 100,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 174,
+        "p5": 22,
+        "p95": 196,
+        "clippedDarkPct": 0.3,
+        "clippedBrightPct": 0.1
+      },
+      "originalSize": {
+        "width": 223,
+        "height": 148
+      },
+      "treatment": "[Organic] Trichoderma viride seed treatment: 4 g/kg seed | [Chemical] Thiram + Carbendazim seed treatment: 3 g/kg seed"
+    },
+    {
+      "filename": "download.jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 445.6,
+        "brightness": 133.5,
+        "greenCoverage": 57.5,
+        "brownCoverage": 4,
+        "plantTissueCoverage": 61.5,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 212,
+        "p5": 40,
+        "p95": 252,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 7
+      },
+      "originalSize": {
+        "width": 178,
+        "height": 148
+      },
+      "treatment": null
+    },
+    {
+      "filename": "Groundnut_Botrytis-blight_3.png",
+      "expectedLabel": "white_mold",
+      "category": "fungal",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1264.1,
+        "brightness": 108.9,
+        "greenCoverage": 65.7,
+        "brownCoverage": 15.2,
+        "plantTissueCoverage": 80.9,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 199,
+        "p5": 41,
+        "p95": 240,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 2.7
+      },
+      "originalSize": {
+        "width": 479,
+        "height": 363
+      },
+      "treatment": "[Organic] Trichoderma harzianum soil drench: 5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS | [Chemical] Tebuconazole soil drench: 1.5 mL/L water as soil drench around stem base"
+    },
+    {
+      "filename": "images (1).jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 5323.5,
+        "brightness": 121.3,
+        "greenCoverage": 49.1,
+        "brownCoverage": 3.8,
+        "plantTissueCoverage": 52.9,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 179,
+        "p5": 30,
+        "p95": 209,
+        "clippedDarkPct": 0.2,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 259,
+        "height": 194
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images (2).jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 913.5,
+        "brightness": 119.1,
+        "greenCoverage": 83.3,
+        "brownCoverage": 61.9,
+        "plantTissueCoverage": 100,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 131,
+        "p5": 62,
+        "p95": 193,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 259,
+        "height": 194
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images (3).jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1422.2,
+        "brightness": 146,
+        "greenCoverage": 25.3,
+        "brownCoverage": 25.6,
+        "plantTissueCoverage": 50.9,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 138,
+        "p5": 69,
+        "p95": 207,
+        "clippedDarkPct": 0.4,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 268,
+        "height": 188
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images (4).jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 13728.5,
+        "brightness": 111.5,
+        "greenCoverage": 82.8,
+        "brownCoverage": 71.7,
+        "plantTissueCoverage": 100,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 174,
+        "p5": 25,
+        "p95": 199,
+        "clippedDarkPct": 1.3,
+        "clippedBrightPct": 0.1
+      },
+      "originalSize": {
+        "width": 259,
+        "height": 194
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images (5).jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1075.1,
+        "brightness": 133.2,
+        "greenCoverage": 75.7,
+        "brownCoverage": 85.2,
+        "plantTissueCoverage": 100,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 218,
+        "p5": 7,
+        "p95": 225,
+        "clippedDarkPct": 4.3,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 226,
+        "height": 223
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images (6).jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "SOFT_PASS",
+      "quality": {
+        "blurScore": 194.5,
+        "brightness": 112.9,
+        "greenCoverage": 10.5,
+        "brownCoverage": 19.4,
+        "plantTissueCoverage": 29.9,
+        "issues": [
+          "LOW_COVERAGE"
+        ]
+      },
+      "augmentationRecovery": "RECOVERED_CONTRAST_1.3x",
+      "exposure": {
+        "dynamicRange": 150,
+        "p5": 31,
+        "p95": 181,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 225,
+        "height": 225
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images.jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1694.4,
+        "brightness": 144.2,
+        "greenCoverage": 61.1,
+        "brownCoverage": 10.1,
+        "plantTissueCoverage": 71.2,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 182,
+        "p5": 61,
+        "p95": 243,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 4.2
+      },
+      "originalSize": {
+        "width": 300,
+        "height": 168
+      },
+      "treatment": null
+    },
+    {
+      "filename": "images_1.jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "FAIL",
+      "quality": {
+        "blurScore": 304.8,
+        "brightness": 164.1,
+        "greenCoverage": 13.6,
+        "brownCoverage": 9.5,
+        "plantTissueCoverage": 23.1,
+        "issues": [
+          "LOW_COVERAGE"
+        ]
+      },
+      "augmentationRecovery": "NOT_RECOVERABLE",
+      "exposure": {
+        "dynamicRange": 139,
+        "p5": 79,
+        "p95": 218,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 259,
+        "height": 194
+      },
+      "treatment": null
+    },
+    {
+      "filename": "Rhizoctonia Limb Rot.jpg",
+      "expectedLabel": "white_mold",
+      "category": "fungal",
+      "status": "SOFT_PASS",
+      "quality": {
+        "blurScore": 98.2,
+        "brightness": 115.4,
+        "greenCoverage": 33.1,
+        "brownCoverage": 68.7,
+        "plantTissueCoverage": 100,
+        "issues": [
+          "BLUR"
+        ]
+      },
+      "augmentationRecovery": "RECOVERED_CONTRAST_1.3x",
+      "exposure": {
+        "dynamicRange": 146,
+        "p5": 59,
+        "p95": 205,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 185,
+        "height": 174
+      },
+      "treatment": "[Organic] Trichoderma harzianum soil drench: 5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS | [Chemical] Tebuconazole soil drench: 1.5 mL/L water as soil drench around stem base"
+    },
+    {
+      "filename": "Root-Knot Nematodes.jpg",
+      "expectedLabel": "root_knot_nematode",
+      "category": "nematode",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1951.3,
+        "brightness": 131.6,
+        "greenCoverage": 13.9,
+        "brownCoverage": 58.7,
+        "plantTissueCoverage": 72.5,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 190,
+        "p5": 41,
+        "p95": 231,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 1.9
+      },
+      "originalSize": {
+        "width": 204,
+        "height": 192
+      },
+      "treatment": "[Organic] Paecilomyces lilacinus biocontrol: 5 kg/ha mixed with FYM at sowing | [Chemical] Fluopyram seed treatment: 0.57 mL/kg seed"
+    },
+    {
+      "filename": "Sclerotinia Blight.jpg",
+      "expectedLabel": "white_mold",
+      "category": "fungal",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1035.8,
+        "brightness": 121.6,
+        "greenCoverage": 22,
+        "brownCoverage": 43.1,
+        "plantTissueCoverage": 65.1,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 197,
+        "p5": 33,
+        "p95": 230,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 1.5
+      },
+      "originalSize": {
+        "width": 192,
+        "height": 179
+      },
+      "treatment": "[Organic] Trichoderma harzianum soil drench: 5 kg/ha mixed with FYM before sowing + 2 g/L soil drench at 30 DAS | [Chemical] Tebuconazole soil drench: 1.5 mL/L water as soil drench around stem base"
+    },
+    {
+      "filename": "Tomato Spotted Wilt Virus (TSWV).jpg",
+      "expectedLabel": "bud_necrosis",
+      "category": "viral",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 1178.7,
+        "brightness": 124.9,
+        "greenCoverage": 37.2,
+        "brownCoverage": 17.6,
+        "plantTissueCoverage": 54.8,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 171,
+        "p5": 50,
+        "p95": 221,
+        "clippedDarkPct": 0,
+        "clippedBrightPct": 0
+      },
+      "originalSize": {
+        "width": 257,
+        "height": 148
+      },
+      "treatment": "[Organic] Blue/yellow sticky traps for thrips monitoring: 20-25 traps per hectare | [Chemical] Fipronil seed treatment: 6 mL/kg seed"
+    },
+    {
+      "filename": "unnamed.jpg",
+      "expectedLabel": "unknown",
+      "category": "unknown",
+      "status": "PASS",
+      "quality": {
+        "blurScore": 539.6,
+        "brightness": 122,
+        "greenCoverage": 79.9,
+        "brownCoverage": 62.8,
+        "plantTissueCoverage": 100,
+        "issues": []
+      },
+      "augmentationRecovery": "N/A",
+      "exposure": {
+        "dynamicRange": 217,
+        "p5": 15,
+        "p95": 232,
+        "clippedDarkPct": 1.6,
+        "clippedBrightPct": 0.5
+      },
+      "originalSize": {
+        "width": 168,
+        "height": 166
+      },
+      "treatment": null
+    }
+  ],
+  "summary": {
+    "total": 17,
+    "passed": 16,
+    "failed": 1,
+    "recovered": 2,
+    "passRate": "94%",
+    "diseaseDistribution": {
+      "aspergillus_aflatoxin": 1,
+      "collar_rot": 1,
+      "white_mold": 3,
+      "root_knot_nematode": 1,
+      "bud_necrosis": 1
+    }
+  }
+}

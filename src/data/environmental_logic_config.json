@@ -1,0 +1,226 @@
+{
+  "version": "1.0.0",
+  "description": "Maps GPS coordinates + weather conditions to disease probability adjustments. Used by the environmental-risk engine for Bayesian prior weighting.",
+  "bayesian_prior_weight": 0.15,
+  "weather_api": {
+    "provider": "open-meteo",
+    "base_url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": ["temperature_2m", "relative_humidity_2m", "precipitation", "soil_moisture_0_to_7cm"],
+    "history_days": 14,
+    "forecast_days": 3
+  },
+  "disease_climate_triggers": {
+    "early_leaf_spot": {
+      "trigger_conditions": {
+        "temperature_min_c": 20,
+        "temperature_max_c": 30,
+        "humidity_min_pct": 80,
+        "consecutive_wet_days": 3,
+        "soil_moisture_min": 0.3
+      },
+      "risk_multiplier": 1.8,
+      "season_peak_months": [7, 8, 9],
+      "notes": "Cercospora arachidicola thrives in warm, humid conditions with leaf wetness >10h/day"
+    },
+    "late_leaf_spot": {
+      "trigger_conditions": {
+        "temperature_min_c": 22,
+        "temperature_max_c": 33,
+        "humidity_min_pct": 85,
+        "consecutive_wet_days": 4,
+        "soil_moisture_min": 0.25
+      },
+      "risk_multiplier": 2.0,
+      "season_peak_months": [8, 9, 10],
+      "notes": "Cercosporidium personatum favors slightly warmer/wetter conditions than early leaf spot"
+    },
+    "rust": {
+      "trigger_conditions": {
+        "temperature_min_c": 18,
+        "temperature_max_c": 28,
+        "humidity_min_pct": 85,
+        "consecutive_wet_days": 2,
+        "soil_moisture_min": 0.2
+      },
+      "risk_multiplier": 2.2,
+      "season_peak_months": [8, 9, 10, 11],
+      "notes": "Puccinia arachidis requires prolonged leaf wetness and cool nights"
+    },
+    "white_mold": {
+      "trigger_conditions": {
+        "temperature_min_c": 20,
+        "temperature_max_c": 30,
+        "humidity_min_pct": 90,
+        "consecutive_wet_days": 5,
+        "soil_moisture_min": 0.4
+      },
+      "risk_multiplier": 2.5,
+      "season_peak_months": [7, 8, 9],
+      "notes": "Sclerotium rolfsii requires persistent soil wetness and warm temperatures"
+    },
+    "aspergillus_aflatoxin": {
+      "trigger_conditions": {
+        "temperature_min_c": 28,
+        "temperature_max_c": 40,
+        "humidity_min_pct": 60,
+        "consecutive_dry_days": 7,
+        "soil_moisture_max": 0.15
+      },
+      "risk_multiplier": 3.0,
+      "season_peak_months": [4, 5, 10, 11],
+      "notes": "Aspergillus flavus thrives in hot, drought-stressed conditions — CRITICAL due to aflatoxin"
+    },
+    "web_blotch": {
+      "trigger_conditions": {
+        "temperature_min_c": 22,
+        "temperature_max_c": 30,
+        "humidity_min_pct": 80,
+        "consecutive_wet_days": 5,
+        "soil_moisture_min": 0.35
+      },
+      "risk_multiplier": 1.5,
+      "season_peak_months": [8, 9],
+      "notes": "Phoma arachidicola requires extended wet periods"
+    },
+    "collar_rot": {
+      "trigger_conditions": {
+        "temperature_min_c": 25,
+        "temperature_max_c": 35,
+        "humidity_min_pct": 85,
+        "consecutive_wet_days": 3,
+        "soil_moisture_min": 0.45
+      },
+      "risk_multiplier": 2.0,
+      "season_peak_months": [6, 7, 8],
+      "notes": "Aspergillus niger attacks seedlings in waterlogged soils"
+    },
+    "rosette_virus": {
+      "trigger_conditions": {
+        "aphid_season": true,
+        "temperature_min_c": 20,
+        "temperature_max_c": 30
+      },
+      "risk_multiplier": 1.5,
+      "season_peak_months": [7, 8, 9],
+      "notes": "Vector-transmitted (Aphis craccivora) — risk tied to aphid population dynamics, not directly weather"
+    },
+    "bud_necrosis": {
+      "trigger_conditions": {
+        "thrips_season": true,
+        "temperature_min_c": 25,
+        "temperature_max_c": 35,
+        "humidity_max_pct": 60
+      },
+      "risk_multiplier": 1.8,
+      "season_peak_months": [6, 7, 8],
+      "notes": "GBNV transmitted by Thrips palmi — hot dry conditions favor thrips populations"
+    },
+    "peanut_mottle": {
+      "trigger_conditions": {
+        "aphid_season": true,
+        "temperature_min_c": 18,
+        "temperature_max_c": 30
+      },
+      "risk_multiplier": 1.3,
+      "season_peak_months": [7, 8, 9],
+      "notes": "Aphid-transmitted PeMoV — lower risk than rosette but broader temp range"
+    },
+    "bacterial_wilt": {
+      "trigger_conditions": {
+        "temperature_min_c": 25,
+        "temperature_max_c": 37,
+        "humidity_min_pct": 80,
+        "soil_moisture_min": 0.4,
+        "soil_ph_max": 6.5
+      },
+      "risk_multiplier": 2.5,
+      "season_peak_months": [7, 8, 9],
+      "notes": "Ralstonia solanacearum persists in acidic, warm, waterlogged soils"
+    },
+    "root_knot_nematode": {
+      "trigger_conditions": {
+        "temperature_min_c": 25,
+        "temperature_max_c": 35,
+        "soil_moisture_min": 0.2,
+        "soil_moisture_max": 0.4,
+        "sandy_soil": true
+      },
+      "risk_multiplier": 1.5,
+      "season_peak_months": [6, 7, 8, 9, 10],
+      "notes": "Meloidogyne arenaria thrives in sandy soils at moderate moisture"
+    },
+    "iron_chlorosis": {
+      "trigger_conditions": {
+        "soil_ph_min": 7.5,
+        "calcareous_soil": true
+      },
+      "risk_multiplier": 1.2,
+      "season_peak_months": [5, 6, 7],
+      "notes": "Abiotic — high pH soils lock out iron availability"
+    },
+    "nitrogen_deficiency": {
+      "trigger_conditions": {
+        "consecutive_heavy_rain_days": 5,
+        "sandy_soil": true
+      },
+      "risk_multiplier": 1.3,
+      "season_peak_months": [6, 7, 8],
+      "notes": "N leaching in sandy soils after heavy rains; also Bradyrhizobium nodulation failure"
+    },
+    "calcium_deficiency": {
+      "trigger_conditions": {
+        "soil_ph_max": 5.5,
+        "consecutive_dry_days": 14
+      },
+      "risk_multiplier": 1.5,
+      "season_peak_months": [8, 9, 10],
+      "notes": "Ca unavailable in acidic soils; drought prevents Ca uptake during pegging"
+    },
+    "boron_deficiency": {
+      "trigger_conditions": {
+        "consecutive_dry_days": 10,
+        "sandy_soil": true,
+        "soil_ph_min": 7.0
+      },
+      "risk_multiplier": 1.3,
+      "season_peak_months": [7, 8, 9],
+      "notes": "Hollow heart — B leaches from sandy soils; alkaline pH reduces availability"
+    },
+    "drought_stress": {
+      "trigger_conditions": {
+        "consecutive_dry_days": 14,
+        "temperature_min_c": 30,
+        "soil_moisture_max": 0.1
+      },
+      "risk_multiplier": 2.0,
+      "season_peak_months": [4, 5, 10, 11],
+      "notes": "Abiotic — prolonged water deficit with high evapotranspiration"
+    },
+    "herbicide_injury": {
+      "trigger_conditions": {},
+      "risk_multiplier": 1.0,
+      "season_peak_months": [5, 6],
+      "notes": "Not weather-dependent — triggered by application events (user-reported or field history)"
+    }
+  },
+  "gps_grid": {
+    "system": "h3",
+    "resolution": 7,
+    "description": "H3 hex grid resolution 7 (~5.16 km² per cell) for anonymized disease prevalence mapping",
+    "min_reports_for_prior": 5,
+    "prior_decay_days": 90
+  },
+  "risk_score_formula": {
+    "description": "Final risk = (model_confidence × (1 - bayesian_weight)) + (environmental_prior × bayesian_weight)",
+    "model_weight": 0.85,
+    "environmental_weight": 0.15,
+    "clamp_min": 0.0,
+    "clamp_max": 1.0
+  },
+  "alert_thresholds": {
+    "low": 0.3,
+    "moderate": 0.5,
+    "high": 0.7,
+    "critical": 0.85
+  }
+}

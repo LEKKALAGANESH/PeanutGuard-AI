@@ -1,0 +1,28 @@
+════════════════════════════════════════════════════════════
+  PeanutGuard Failure Analysis Log v2
+  Generated: 2026-03-19T15:42:19.446Z
+  Images: D:\Desktop\peanut crop diseases\testing images
+  Total: 17 | Passed: 16 | Failed: 1 | Recovered: 2
+════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────
+FILE: images_1.jpg
+EXPECTED LABEL: unknown (unknown)
+DISEASE NAME: Unknown
+STATUS: FAIL
+────────────────────────────────────────────────────────────
+  Blur Score:      304.85 (threshold: 100)
+  Brightness:      164.05 (range: 40–240)
+  Green Coverage:  13.6%
+  Brown Coverage:  9.5%
+  Plant Tissue:    23.1% (threshold: 30%)
+  Dynamic Range:   139 (p5=79, p95=218)
+  Original Size:   259x194
+  Augmentation:    NOT_RECOVERABLE
+  Issues: LOW_COVERAGE
+
+  DIAGNOSIS:
+    Subject does not fill enough of the frame.
+
+  RECOMMENDATIONS:
+    * Move phone 10-20cm from the plant so tissue fills >30% of frame.
